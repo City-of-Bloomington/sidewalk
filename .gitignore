@@ -1,0 +1,5 @@
+site_config.inc
+*.css
+*.css.map
+*.mo
+vendor

@@ -1,0 +1,18 @@
+{
+    "require": {
+        "php": ">=7.2",
+        "aura/di": "~3",
+        "aura/router": "~2",
+        "aura/sqlquery": "~2",
+        "jasig/phpcas": "~1",
+        "graylog2/gelf-php": "@stable",
+        "zendframework/zend-log": "@stable",
+        "zendframework/zend-permissions-acl": "@stable"
+    },
+    "autoload": {
+        "psr-4": {
+            "Web\\": "src/Web/",
+            "Domain\\": "src/Domain"
+        }
+    }
+}
