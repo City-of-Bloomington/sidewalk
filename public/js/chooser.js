@@ -12,6 +12,8 @@
         searchAddress = function (address) {
             let req = new XMLHttpRequest();
 
+            resultsDiv.innerHTML = '<img src="' + BASE_URI + '/spinner.gif" />';
+
             req.addEventListener('load', resultsHandler);
             req.open('GET', ADDRESS_SERVICE + '/?format=json;queryType=address;query=' + address);
             req.send();
