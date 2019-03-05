@@ -5,5 +5,6 @@
     <title><?= isset($this->title) ? self::escape($this->title) : APPLICATION_NAME; ?></title>
     <script type="text/javascript">
         var ADDRESS_SERVICE = '<?= ADDRESS_SERVICE; ?>';
+        var BASE_URI        = '<?= BASE_URI;        ?>';
     </script>
 </head>
