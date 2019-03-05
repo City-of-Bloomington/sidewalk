@@ -1,0 +1,7 @@
+buildignore
+build
+.git*
+site_config.inc
+backup.cnf
+/data/sessions/*
+.sass-cache

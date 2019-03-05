@@ -1,0 +1,7 @@
+.visually-hidden { display: none; }
+
+#searchResults {
+    margin-top: 4px;
+    ul, li { list-style: none; }
+    li:hover { cursor: pointer; }
+}

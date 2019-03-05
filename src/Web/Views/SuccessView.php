@@ -14,7 +14,7 @@ class SuccessView extends Template
     public function __construct(int $application_id)
     {
         parent::__construct('default', 'html');
-        $this->vars['title'] = $this->_('success');
+        $this->vars['title'] = 'Success';
 
         $this->blocks = [
             new Block('sidewalk/success.inc')

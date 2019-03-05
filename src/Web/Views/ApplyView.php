@@ -17,7 +17,7 @@ class ApplyView extends Template
     public function __construct(Request $request, ?Response $response=null)
     {
         parent::__construct('default', 'html');
-        $this->vars['title'] = $this->_('apply');
+        $this->vars['title'] = 'Apply';
 
         $vars = isset($response->errors) ? ['errorMessages' => $response->errors] : [];
 

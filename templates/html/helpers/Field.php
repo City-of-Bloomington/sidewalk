@@ -76,10 +76,10 @@ class Field extends Helper
         $help  = !empty($params['help' ]) ? "<div class=\"help\">$params[help]</div>"    : '';
 
         return "
-        <div$classes>
-            $label
-            $input$help
-        </div>
+        <dl$classes>
+            <dt>$label</dt>
+            <dd>$input$help</dd>
+        </dl>
         ";
     }
 

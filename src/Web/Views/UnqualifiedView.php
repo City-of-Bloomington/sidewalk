@@ -16,6 +16,7 @@ class UnqualifiedView extends Template
     public function __construct(Response $response)
     {
         parent::__construct('default', 'html');
+        $this->vars['title'] = 'Not Qualified';
 
         $this->blocks = [
             new Block('sidewalk/notQualified.inc', [

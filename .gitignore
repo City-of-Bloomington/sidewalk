@@ -3,3 +3,4 @@ site_config.inc
 *.css.map
 *.mo
 vendor
+build
