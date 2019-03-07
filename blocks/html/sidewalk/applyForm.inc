@@ -25,7 +25,7 @@ use Web\View;
         }
     ?>
     <form method="post">
-        <fieldset>
+        <fieldset><legend>Applicant Information</legend>
             <input type="hidden" name="address_id" value="<?= $this->address_id; ?>" />
             <input type="hidden" name="address"    value="<?= $this->address;    ?>" />
             <?php
@@ -33,36 +33,34 @@ use Web\View;
                 echo $h->field([
                     'name'     => 'firstname',
                     'id'       => 'firstname',
-                    'label'    => $this->_('firstname'),
+                    'label'    => 'First Name',
                     'value'    => $this->firstname,
                     'required' => true
                 ]);
                 echo $h->field([
                     'name'     => 'lastname',
                     'id'       => 'lastname',
-                    'label'    => $this->_('lastname'),
+                    'label'    => 'Last Name',
                     'value'    => $this->lastname,
                     'required' => true
                 ]);
                 echo $h->field([
                     'name'     => 'email',
                     'id'       => 'email',
-                    'label'    => $this->_('email'),
+                    'label'    => 'Email',
                     'type'     => 'email',
-                    'value'    => $this->email,
-                    'required' => true
+                    'value'    => $this->email
                 ]);
                 echo $h->field([
                     'name'     => 'phone',
                     'id'       => 'phone',
-                    'label'    => $this->_('phone'),
+                    'label'    => 'Phone',
                     'type'     => 'tel',
-                    'value'    => $this->phone,
-                    'required' => true
+                    'value'    => $this->phone
                 ]);
             ?>
         </fieldset>
-        <fieldset>
+        <fieldset><legend>Requirements</legend>
             <?php
                 $options = [
                     ['value'=>''],
@@ -72,7 +70,7 @@ use Web\View;
                 echo $h->field([
                     'name'     => 'owned',
                     'id'       => 'owned',
-                    'label'    => $this->_('owned'),
+                    'label'    => 'Are you the property owner?',
                     'value'    => $this->owned ? 1 : 0,
                     'type'     => 'select',
                     'options'  => $options,
@@ -81,14 +79,14 @@ use Web\View;
                 echo $h->field([
                     'name'     => 'occupied',
                     'id'       => 'occupied',
-                    'label'    => $this->_('occupied'),
+                    'label'    => 'Do you currently reside at this property?',
                     'value'    => $this->occupied ? 1 : 0,
                     'type'     => 'select',
                     'options'  => $options,
                     'required' => true
                 ]);
             ?>
-            <button type="submit"><?= $this->_('apply'); ?></button>
+            <button type="submit">Apply</button>
         </fieldset>
     </form>
 </section>

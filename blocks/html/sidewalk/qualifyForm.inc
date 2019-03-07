@@ -9,9 +9,61 @@ declare (strict_types=1);
 $this->template->addToAsset('scripts', BASE_URI.'/js/chooser.js');
 ?>
 <section>
-    <header><h1><?= $this->_('qualify'); ?></h1></header>
+    <p> The purpose of this program is to make funds available for
+        City of Bloomington owner occupied residential properties within
+        designated areas to complete the repair of their adjacent sidewalk.
+        Per city code, property owners are responsible for the maintenance and
+        repair of sidewalks that are adjacent to their property.
+    </p>
+    <p>This program is a partnership between the City of Bloomington,
+        its residents, and vetted local contractors.
+    </p>
+
+    <p> To qualify, property owners must meet the following requirements:</p>
+    <ul><li>The property must be a single-family, owner-occupied property
+            located within the City of Bloomington corporate limits.
+        </li>
+        <li>The property must be located within a designated federal Community
+            Development Block Grant boundary area
+        </li>
+        <li>The applicant must have owned and occupied the property prior to
+            application submission.
+        </li>
+        <li>Property taxes must be current at the time of application, or the
+            property owner must be on a verifiable payment plan with the Monroe
+            County Clerk’s Office.
+        </li>
+        <li>Property owners must not be delinquent on taxes or other debt owed
+            to the City of Bloomington.
+        </li>
+        <li>The sidewalk must have a condition rating of “poor”, which will be
+            verified by City staff upon application submission.
+        </li>
+    </ul>
+    <p> To apply, enter your address below and press the green search button.
+        If your property is located within a federal Community Development
+        Block Grant area, click on the confirmation address to access the
+        application form.
+    </p>
+    <p> Please complete the application and submit online or in person to the
+        Public Works Department located at
+        <address>401 N Morton St. Rm#120
+Bloomington, IN 47404</address>
+    </p>
+    <p> <strong>If an application form does not appear you do not meet one or more of
+        the program’s eligibility requirements.</strong>
+    </p>
+    <p> Public Works Department staff will determine income eligibility,
+        tax status, and sidewalk rating based on city records. Applicants will
+        be contacted at staff’s earliest convenience regarding their sidewalk’s
+        status. This program is on a first come, first serve basis.
+    </p>
+    <p> If you have any questions or need assistance with completing the
+        application, please call the Public Works Department at
+        <a href="tel:+18123493410">812-349-3410</a>.
+    </p>
     <form method="get" id="addressSearchForm">
-        <fieldset><legend>Search</legend>
+        <fieldset><legend>Check address for elegibility</legend>
             <div>
                 <label for="addressQuery">Address</label>
                 <input name="addressQuery" id="addressQuery" />

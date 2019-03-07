@@ -52,7 +52,7 @@ class Command
             $errors[] = 'address/unknown';
         }
 
-        if (!$r->firstname || !$r->lastname || !$r->email || !$r->phone) {
+        if (!$r->firstname || !$r->lastname) {
             $errors[] = 'missingContactInfo';
         }
 

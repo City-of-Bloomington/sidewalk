@@ -13,7 +13,7 @@ declare (strict_types=1);
 
     <?php
         foreach ($this->reasons as $r) {
-            echo "<p>{$this->_($r)}</p>";
+            $this->_include("errorMessages/$r.inc");
         }
     ?>
 </section>

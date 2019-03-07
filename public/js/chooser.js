@@ -76,5 +76,4 @@
         e.preventDefault();
         searchAddress(document.getElementById('addressQuery').value);
     }, false);
-    document.getElementById('addressQuery').focus();
 })(window);
