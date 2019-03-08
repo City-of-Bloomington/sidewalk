@@ -4,3 +4,4 @@ site_config.inc
 *.mo
 vendor
 build
+ansible/roles

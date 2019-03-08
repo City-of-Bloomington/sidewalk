@@ -1,0 +1,54 @@
+<?php
+/**
+ * @copyright 2019 City of Bloomington, Indiana
+ * @license https://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
+ */
+declare (strict_types=1);
+define('APPLICATION_NAME','sidewalk');
+
+/**
+ * URL Generation settings
+ *
+ * Do NOT use trailing slashes
+ *
+ * If your site is being proxied, change BASE_HOST to the hostname
+ * used for the outside world.
+ */
+define('BASE_URI' , '/sidewalk');
+define('BASE_HOST', isset($_SERVER['HTTP_X_FORWARDED_HOST'])
+                        ? $_SERVER['HTTP_X_FORWARDED_HOST']
+                        : $_SERVER['SERVER_NAME']);
+define('BASE_URL' , "https://".BASE_HOST.BASE_URI);
+
+/**
+ * Specify the theme directory
+ *
+  * Remember to create a symbolic link in public/css to the theme CSS
+  * that you declare here.
+ *
+ * A theme can consist of templates, blocks which will override core.
+ * The current theme's screen.css will be included in the HTML head.
+ */
+define('THEME', 'Drupal');
+
+/**
+ * Database Setup
+ */
+$DATABASES = [
+    'default' => [
+        'driver'   => 'mysql',
+        'host'     => '{{ sidewalk_db.host }}',
+        'dbname'   => '{{ sidewalk_db.name }}',
+        'schema'   => '',
+        'username' => '{{ sidewalk_db.user }}',
+        'password' => '{{ sidewalk_db.pass }}',
+        'options'  => []
+    ]
+];
+
+define('ADDRESS_SERVICE', '{{ sidewalk_address_service }}');
+
+define('DATE_FORMAT',    'n/j/Y');
+define('TIME_FORMAT',    'g:i a');
+define('DATETIME_FORMAT', DATE_FORMAT.' '.TIME_FORMAT);
+define('LOCALE', 'en_US');
