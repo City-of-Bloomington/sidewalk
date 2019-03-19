@@ -19,6 +19,7 @@ $DI->set(    'Domain\DataStorage\Sidewalk\SidewalkRepository',
 $DI->lazyNew('Domain\DataStorage\Sidewalk\PdoSidewalkRepository'));
 
 $DI->params[ 'Web\Services\MasterAddressService']['base_url'] = ADDRESS_SERVICE;
+$DI->params[ 'Web\Services\MasterAddressService']['city'    ] = CITY;
 $DI->set(    'Domain\DataStorage\AddressService',
 $DI->lazyNew('Web\Services\MasterAddressService'));
 

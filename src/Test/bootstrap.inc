@@ -2,7 +2,7 @@
 /**
  * Where on the filesystem this application is installed
  */
-define('APPLICATION_HOME', __DIR__);
+define('APPLICATION_HOME', realpath(__DIR__.'/../..'));
 define('VERSION', trim(file_get_contents(APPLICATION_HOME.'/VERSION')));
 
 /**
@@ -16,7 +16,7 @@ define('VERSION', trim(file_get_contents(APPLICATION_HOME.'/VERSION')));
  * configuration are stored.  For backup purposes, backing up this
  * directory would be sufficient for an easy full restore.
  */
-define('SITE_HOME', !empty($_SERVER['SITE_HOME']) ? $_SERVER['SITE_HOME'] : __DIR__.'/data');
+define('SITE_HOME', __DIR__);
 include SITE_HOME.'/site_config.inc';
 
 //-------------------------------------------------------------------
@@ -31,12 +31,3 @@ $loader = require APPLICATION_HOME.'/vendor/autoload.php';
 include APPLICATION_HOME.'/src/container/container.php';
 include APPLICATION_HOME.'/routes.inc';
 include APPLICATION_HOME.'/access_control.inc';
-
-if (defined('GRAYLOG_DOMAIN') && defined('GRAYLOG_PORT')) {
-    $graylog = new Application\GraylogWriter(GRAYLOG_DOMAIN, GRAYLOG_PORT);
-    $logger  = new Zend\Log\Logger();
-    $logger->addWriter($graylog);
-    Zend\Log\Logger::registerErrorHandler($logger);
-    Zend\Log\Logger::registerExceptionHandler($logger);
-    Zend\Log\Logger::registerFatalErrorShutdownFunction($logger);
-}

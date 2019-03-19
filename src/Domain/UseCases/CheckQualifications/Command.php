@@ -26,6 +26,10 @@ class Command
         if ($address) {
             $errors = [];
 
+            if (!$this->service->inCityLimits($address)) {
+                $errors[] = 'notInCityLimits';
+            }
+
             if (!self::residentialSingleFamily($address)) {
                 $errors[] = 'notResidentialSingleFamily';
             }

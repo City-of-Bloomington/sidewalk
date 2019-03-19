@@ -2,6 +2,7 @@ site_config.inc
 *.css
 *.css.map
 *.mo
+.phpunit*
 vendor
 build
 ansible/roles

@@ -12,16 +12,23 @@ use Web\Url;
 class MasterAddressService implements AddressService
 {
     private $base_url;
+    private $city;
 
-    public function __construct(string $base_url)
+    public function __construct(string $base_url, string $city)
     {
         $this->base_url = $base_url;
+        $this->city     = $city;
     }
 
     public function address(int $address_id): ?array
     {
         $url = $this->base_url."/addresses/viewAddress.php?format=json;address_id=$address_id";
         return self::jsonRequest($url);
+    }
+
+    public function inCityLimits(array $address): bool
+    {
+        return $address['jurisdiction'] == $this->city;
     }
 
     private static function jsonRequest($url): ?array
