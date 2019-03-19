@@ -7,7 +7,8 @@ create table applications (
     email      varchar(128),
     phone      varchar(16),
     owned      bool,
-    occupied   bool
+    occupied   bool,
+    date       timestamp not null default CURRENT_TIMESTAMP
 );
 
 create table census (
