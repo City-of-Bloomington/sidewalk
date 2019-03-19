@@ -13,6 +13,7 @@
       vars:
         packages:
           - "php-mysql"
+          - "postfix"
 
     - name: "Create mysql database"
       mysql_db:

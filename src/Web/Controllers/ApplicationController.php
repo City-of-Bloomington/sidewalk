@@ -27,9 +27,14 @@ class ApplicationController extends BaseController
                 $apply    = $this->di->get('Domain\UseCases\Apply\Command');
                 $request  = new ApplyRequest($_POST);
                 $response = $apply($request);
+
+                // If their request was saved
                 if ($response->application_id) {
+                    self::sendNotification($request);
                     return new SuccessView($response->application_id);
                 }
+
+                // There was something wrong with their request
                 if ($request->address) {
                     return new ApplyView($request, $response);
                 }
@@ -47,5 +52,15 @@ class ApplicationController extends BaseController
             return new UnqualifiedView($res);
         }
         return new QualifyView();
+    }
+
+    private static function sendNotification(ApplyRequest $request)
+    {
+        $to      = NOTIFICATION_EMAIL;
+        $from    = 'From: '.APPLICATION_NAME.'@'.BASE_HOST;
+        $subject = 'Sidewalk Repair Assistance Program';
+        $message = json_encode($request, JSON_PRETTY_PRINT);
+
+        mail($to, $subject, $message, $from);
     }
 }
