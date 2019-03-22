@@ -14,7 +14,7 @@ class QualifyView extends Template
     public function __construct(?int $address_id=null, ?string $address=null)
     {
         parent::__construct('default', 'html');
-        $this->vars['title'] = 'Qualify';
+        $this->vars['title'] = 'Sidewalk Repair Assistance Program';
 
         $this->blocks = [
             new Block('sidewalk/qualifyForm.inc', [

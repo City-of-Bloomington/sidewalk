@@ -9,22 +9,26 @@ declare (strict_types=1);
 $this->template->addToAsset('scripts', BASE_URI.'/js/chooser.js');
 ?>
 <section>
-    <p> The purpose of this program is to make funds available for
-        City of Bloomington owner occupied residential properties within
-        designated areas to complete the repair of their adjacent sidewalk.
-        Per city code, property owners are responsible for the maintenance and
+    <p> Per city code, property owners are responsible for the maintenance and
         repair of sidewalks that are adjacent to their property.
+    </p>
+    <p> The purpose of this program is to make funds available for City of Bloomington
+        owner occupied residential properties within designated areas to complete the
+        repair of their adjacent sidewalk. This program is a partnership between the
+        City of Bloomington, its residents, and vetted local contractors.
     </p>
     <p>This program is a partnership between the City of Bloomington,
         its residents, and vetted local contractors.
     </p>
 
+    <h2>Requirements</h2>
     <p> To qualify, property owners must meet the following requirements:</p>
     <ul><li>The property must be a single-family, owner-occupied property
             located within the City of Bloomington corporate limits.
         </li>
         <li>The property must be located within a designated federal Community
-            Development Block Grant boundary area
+            Development Block Grant boundary area.
+            <div><a class="button" href="<?= BASE_URI; ?>/map.pdf">View Boundary Map</a></div>
         </li>
         <li>The applicant must have owned and occupied the property prior to
             application submission.
@@ -40,7 +44,9 @@ $this->template->addToAsset('scripts', BASE_URI.'/js/chooser.js');
             verified by City staff upon application submission.
         </li>
     </ul>
-    <p> To apply, enter your address below and press the green search button.
+
+    <h2>How to apply</h2>
+    <p> Enter your address below in the search box and press the green search button.
         If your property is located within a federal Community Development
         Block Grant area, click on the confirmation address to access the
         application form.
@@ -58,12 +64,15 @@ Bloomington, IN 47404</address>
         be contacted at staff’s earliest convenience regarding their sidewalk’s
         status. This program is on a first come, first serve basis.
     </p>
+
+    <h2>Questions</h2>
     <p> If you have any questions or need assistance with completing the
         application, please call the Public Works Department at
-        <a href="tel:+18123493410">812-349-3410</a>.
+        <a href="tel:+18123493410">812-349-3410</a>, or email
+        <a href="mailto:public.works@bloomington.in.gov">public.works@bloomington.in.gov</a>.
     </p>
     <form method="get" id="addressSearchForm">
-        <fieldset><legend>Check address for elegibility</legend>
+        <fieldset><legend>Enter your address below for program eligibility</legend>
             <div>
                 <label for="addressQuery">Address</label>
                 <input name="addressQuery" id="addressQuery" />
