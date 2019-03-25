@@ -14,8 +14,7 @@ $this->template->addToAsset('scripts', BASE_URI.'/js/chooser.js');
     </p>
     <p> The purpose of this program is to make funds available for City of Bloomington
         owner occupied residential properties within designated areas to complete the
-        repair of their adjacent sidewalk. This program is a partnership between the
-        City of Bloomington, its residents, and vetted local contractors.
+        repair of their adjacent sidewalk.
     </p>
     <p>This program is a partnership between the City of Bloomington,
         its residents, and vetted local contractors.
