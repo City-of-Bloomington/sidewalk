@@ -58,7 +58,7 @@ Bloomington, IN 47404</address>
     <p> <strong>If an application form does not appear you do not meet one or more of
         the program’s eligibility requirements.</strong>
     </p>
-    <p> Public Works Department staff will determine income eligibility,
+    <p> Public Works Department staff will determine eligibility,
         tax status, and sidewalk rating based on city records. Applicants will
         be contacted at staff’s earliest convenience regarding their sidewalk’s
         status. This program is on a first come, first serve basis.
