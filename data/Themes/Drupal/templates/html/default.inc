@@ -18,6 +18,7 @@
                         <nav role="navigation" aria-labelledby="system-breadcrumb">
                             <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
                             <a href="/transportation">Getting Around Bloomington</a>
+                            <a href="/transportation/sidewalks">Sidewalk Repair &amp; Maintenance</a>
                         </nav>
 
                     </div>
