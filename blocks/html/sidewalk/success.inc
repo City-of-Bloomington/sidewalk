@@ -6,5 +6,12 @@
 declare (strict_types=1);
 ?>
 <section>
-    <header><h1><?= $this->_('success'); ?></h1></header>
+    <div id="intro">
+        <div>
+            <p>Thank you for your interest in the Sidewalk Repair Assistance
+               Program.  Once your application is reviewed a member of the
+               Department of Public Works will contact you to discuss next steps
+            </p>
+        </div>
+    </div>
 </section>
