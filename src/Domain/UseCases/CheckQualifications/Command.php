@@ -49,8 +49,9 @@ class Command
 
     private static function residentialSingleFamily(array $address): bool
     {
-        return (!empty($address['locationUseType']['location_code'])
-                &&     $address['locationUseType']['location_code'] == 'RS');
+        return (     !empty($address['locationUseType']['location_code'])
+                && in_array($address['locationUseType']['location_code'], ['RS', 'UK']));
+        
     }
 
     private static function location_id(array $address): int
