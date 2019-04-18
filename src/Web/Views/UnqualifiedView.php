@@ -20,7 +20,7 @@ class UnqualifiedView extends Template
 
         $this->blocks = [
             new Block('sidewalk/notQualified.inc', [
-                'address' => $response->address['streetAddress'],
+                'address' => $response->address,
                 'reasons' => $response->errors
             ])
         ];
