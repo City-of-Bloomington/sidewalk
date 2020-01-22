@@ -10,7 +10,6 @@
 		$this->_include('partials/header.inc');
 	?>
 	<main>
-        <div id="banner"></div>
         <div id="breadcrumb">
             <div class="container">
                 <section id="block-cob-breadcrumbs">
