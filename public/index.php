@@ -29,18 +29,18 @@ if ($route) {
                 $view = $c->$action($route->params);
             }
             else {
-                $view = new \Application\Views\ForbiddenView();
+                $view = new \Web\Views\ForbiddenView();
             }
         }
         else {
             $f = $ROUTES->getFailedRoute();
-            $view = new \Application\Views\NotFoundView();
+            $view = new \Web\Views\NotFoundView();
         }
     }
 }
 else {
     $f = $ROUTES->getFailedRoute();
-    $view = new \Application\Views\NotFoundView();
+    $view = new \Web\Views\NotFoundView();
 }
 
 echo $view->render();

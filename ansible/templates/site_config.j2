@@ -14,7 +14,7 @@ define('APPLICATION_NAME','sidewalk');
  * If your site is being proxied, change BASE_HOST to the hostname
  * used for the outside world.
  */
-define('BASE_URI' , '/sidewalk');
+define('BASE_URI' , "{{ sidewalk_base_uri }}");
 define('BASE_HOST', isset($_SERVER['HTTP_X_FORWARDED_HOST'])
                         ? $_SERVER['HTTP_X_FORWARDED_HOST']
                         : $_SERVER['SERVER_NAME']);

@@ -3,10 +3,10 @@
  * @copyright 2016 City of Bloomington, Indiana
  * @license http://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
  */
-namespace Application\Views;
+namespace Web\Views;
 
-use Application\Block;
-use Application\Template;
+use Web\Block;
+use Web\Template;
 
 class NotFoundView extends Template
 {

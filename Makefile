@@ -15,8 +15,8 @@ clean:
 	mkdir build
 
 compile: deps
-	cd public/css                    && sassc -mt compact screen.scss screen-${VERSION}.css
-	cd data/Themes/Drupal/public/css && sassc -mt compact screen.scss screen-${VERSION}.css
+	cd public/css                    && sassc -t compact -m screen.scss screen-${VERSION}.css
+	cd data/Themes/Drupal/public/css && sassc -t compact -m screen.scss screen-${VERSION}.css
 
 package:
 	rsync -rl --exclude-from=buildignore --delete . build/sidewalk

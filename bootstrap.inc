@@ -33,7 +33,7 @@ include APPLICATION_HOME.'/routes.inc';
 include APPLICATION_HOME.'/access_control.inc';
 
 if (defined('GRAYLOG_DOMAIN') && defined('GRAYLOG_PORT')) {
-    $graylog = new Application\GraylogWriter(GRAYLOG_DOMAIN, GRAYLOG_PORT);
+    $graylog = new Web\GraylogWriter(GRAYLOG_DOMAIN, GRAYLOG_PORT);
     $logger  = new Zend\Log\Logger();
     $logger->addWriter($graylog);
     Zend\Log\Logger::registerErrorHandler($logger);
