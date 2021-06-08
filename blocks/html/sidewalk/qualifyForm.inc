@@ -27,7 +27,10 @@ $this->template->addToAsset('scripts', BASE_URI.'/js/chooser.js');
         </li>
         <li>The property must be located within a designated federal Community
             Development Block Grant boundary area.
-            <div><a class="button" href="<?= BASE_URI; ?>/map.pdf">View Boundary Map</a></div>
+            <div><a class="button" href="https://bloomington.in.gov/gisdata/mapgallery/CityServices-Operations/Sidewalks/SidewalkParticipationProgramEP.pdf">
+                    View Boundary Map
+                </a>
+            </div>
         </li>
         <li>The applicant must have owned and occupied the property prior to
             application submission.
