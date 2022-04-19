@@ -47,6 +47,7 @@ $this->template->addToAsset('scripts', BASE_URI.'/js/chooser.js');
         </li>
     </ul>
 
+    <!--
     <h2>How to apply</h2>
     <p> Enter your address below in the search box and press the green search button.
         If your property is located within a federal Community Development
@@ -82,5 +83,6 @@ Bloomington, IN 47404</address>
             <button type="submit" class="search">Search</button>
             <div id="searchResults"></div>
         </fieldset>
+    -->
     </form>
 </section>
