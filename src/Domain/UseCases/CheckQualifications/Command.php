@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright 2019 City of Bloomington, Indiana
+ * @copyright 2019-2022 City of Bloomington, Indiana
  * @license https://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
  */
 declare (strict_types=1);
@@ -30,13 +30,18 @@ class Command
                 $errors[] = 'notInCityLimits';
             }
 
-            if (!self::residentialSingleFamily($address)) {
-                $errors[] = 'notResidentialSingleFamily';
-            }
+            $location = $this->service::active_location($address);
+            if ($location) {
+                if (!self::residentialSingleFamily($location)) {
+                    $errors[] = 'notResidentialSingleFamily';
+                }
 
-            $cdbg = $this->repo->inCDBG(self::location_id($address));
-            if (!$cdbg) {
-                $errors[] = 'notInCDBG';
+                if (!$this->repo->inCDBG($location['location_id'])) {
+                    $errors[] = 'notInCDBG';
+                }
+            }
+            else {
+                $errors[] = 'retiredAddress';
             }
 
             return $errors
@@ -47,17 +52,9 @@ class Command
         return new Response(null, false, ['address/unknown']);
     }
 
-    private static function residentialSingleFamily(array $address): bool
+    private static function residentialSingleFamily(array $location): bool
     {
-        return (     !empty($address['locationUseType']['location_code'])
-                && in_array($address['locationUseType']['location_code'], ['RS', 'UK']));
-        
-    }
-
-    private static function location_id(array $address): int
-    {
-        foreach ($address['locations'] as $l) {
-            if ($l['active']) { return (int)$l['location_id']; }
-        }
+        return (     !empty($location['type_code'])
+                && in_array($location['type_code'], ['RS', 'UK']));
     }
 }

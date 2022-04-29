@@ -1,6 +1,6 @@
 "use strict";
 /**
- * @copyright 2019 City of Bloomington, Indiana
+ * @copyright 2019-2022 City of Bloomington, Indiana
  * @license https://www.gnu.org/licenses/agpl.txt, see LICENSE
  */
 (function (window) {
@@ -15,7 +15,7 @@
             resultsDiv.innerHTML = '<img src="' + BASE_URI + '/spinner.gif" />';
 
             req.addEventListener('load', resultsHandler);
-            req.open('GET', ADDRESS_SERVICE + '/?format=json;queryType=address;query=' + address);
+            req.open('GET', ADDRESS_SERVICE + '/addresses?format=json;address=' + address);
             req.send();
         },
 

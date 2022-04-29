@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright 2019 City of Bloomington, Indiana
+ * @copyright 2019-2022 City of Bloomington, Indiana
  * @license https://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
  */
 declare (strict_types=1);
@@ -45,8 +45,8 @@ class ApplicationController extends BaseController
 
             if ($res->qualified && !isset($request)) {
                 return new ApplyView(new ApplyRequest([
-                    'address_id' => $res->address['id'],
-                    'address'    => $res->address['streetAddress']
+                    'address_id' => $res->address['address']['id'],
+                    'address'    => $res->address['address']['streetAddress']
                 ]));
             }
             return new UnqualifiedView($res);

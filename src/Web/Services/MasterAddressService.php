@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright 2019 City of Bloomington, Indiana
+ * @copyright 2019-2022 City of Bloomington, Indiana
  * @license https://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
  */
 declare (strict_types=1);
@@ -43,13 +43,21 @@ class MasterAddressService implements AddressService
 
     public function address(int $address_id): ?array
     {
-        $url = $this->base_url."/addresses/viewAddress.php?format=json;address_id=$address_id";
+        $url = $this->base_url."/addresses/$address_id?format=json";
         return self::jsonRequest($url);
+    }
+
+    public static function active_location(array $address): ?array
+    {
+        foreach ($address['locations'] as $l) {
+            if ($l['active']) { return $l; }
+        }
+        return null;
     }
 
     public function inCityLimits(array $address): bool
     {
-        return $address['jurisdiction'] == $this->city;
+        return $address['address']['jurisdiction_name'] == $this->city;
     }
 
     private static function jsonRequest($url): ?array

@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright 2019 City of Bloomington, Indiana
+ * @copyright 2019-2022 City of Bloomington, Indiana
  * @license https://www.gnu.org/licenses/agpl.txt GNU/AGPL, see LICENSE
  * @param array  $this->address
  * @param array  $this->reasons  Why they are not qualified
@@ -8,7 +8,8 @@
 declare (strict_types=1);
 use Web\Services\MasterAddressService as Address;
 
-$type = Address::$locationUseTypes[$this->address['locationUseType']['location_code']];
+$location = Address::active_location($this->address);
+$type     = $location['type_name'];
 ?>
 <h2><?= $type; ?></h1>
 <p> This program is specifically designed only for single family,
